@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import datetime
+import os
 
 ########################
 # Utility transforms
@@ -11,8 +12,12 @@ def weeknum(dt):
 #####################
 # Data loading
 #####################
-hospitals = pd.read_csv("/Users/aduffy/Documents/covid19/hospitals.csv")
-cases = pd.read_csv("/Users/aduffy/Documents/covid19/cases_by_county.csv")
+hospitals = pd.read_csv(
+        os.path.join(os.curdir, "hospitals.csv"),
+)
+cases = pd.read_csv(
+        os.path.join(os.curdir, "cases_by_county.csv"),
+)
 
 #####################
 # Data cleaning
